@@ -33,5 +33,27 @@ export default class StringProcessor implements StringProcessorContract {
             }
             return reversedString;
         }
-    }
+    };
+
+    /**
+     * Функция для переворота строки.
+     * @param str - строка, которую нужно проверить на палиндром.
+     * @returns является ли строка палиндромом.
+    */
+    public isPalindrome(str: string): boolean {
+        const len = str.length;
+        let left = 0;
+        let right = len - 1;
+
+        while (left < right) {
+            if (str[left] !== str[right]) {
+                return false;
+            }
+
+            left++;
+            right--;
+        }
+
+        return true;
+    };
 }
